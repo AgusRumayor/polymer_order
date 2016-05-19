@@ -61,6 +61,13 @@
 		<template is="dom-repeat" items="[[getResponse.data]]">
 			<paper-material elevation="2">{{item}}</paper-material>
 		</template>
+		<iron-ajax auto
+        	url="http://localhost:8000/upload/[[ajaxResponse.token]]"
+		method="POST"
+		contentType="application/json"
+		handle-as="json"
+		last-response="{{postResponse}}"
+		verbose="true"></iron-ajax>
 	</template>
     </template>
     
